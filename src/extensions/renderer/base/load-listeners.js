@@ -72,7 +72,6 @@ BRp.nodeIsDraggable = function( node ){
   return (
     node
     && node.isNode()
-    && !node.locked()
     && node.grabbable()
   );
 };
@@ -158,7 +157,7 @@ BRp.load = function(){
     var list = opts.addToList;
     var listHasEle = list.has(ele);
 
-    if( !listHasEle && ele.grabbable() && !ele.locked() ){
+    if( !listHasEle && ele.grabbable()){
       list.merge( ele );
       setGrabbed( ele );
     }
